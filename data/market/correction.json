@@ -1,0 +1,19 @@
+{
+  "scenario": "market_correction",
+  "nifty_ytd": -0.08,
+  "nifty_level": 20800,
+  "gold_ytd": 0.09,
+  "gold_price_per_gram": 6900,
+  "fd_rate": 0.075,
+  "inflation_rate": 0.055,
+  "top_mf_returns": {
+    "large_cap_avg": -0.05,
+    "mid_cap_avg": -0.11,
+    "debt_fund_avg": 0.071
+  },
+  "ai_signals": [
+    "Market down 8% — SIPs are buying units cheaper, do not stop",
+    "This is not a crash — historical corrections average 10-15%",
+    "Avoid panic selling — your financial twin recommends holding"
+  ]
+}

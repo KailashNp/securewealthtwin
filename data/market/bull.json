@@ -1,0 +1,19 @@
+{
+  "scenario": "bull_market",
+  "nifty_ytd": 0.18,
+  "nifty_level": 26500,
+  "gold_ytd": 0.03,
+  "gold_price_per_gram": 6400,
+  "fd_rate": 0.065,
+  "inflation_rate": 0.042,
+  "top_mf_returns": {
+    "large_cap_avg": 0.16,
+    "mid_cap_avg": 0.21,
+    "debt_fund_avg": 0.062
+  },
+  "ai_signals": [
+    "Market up 18% YTD — review if equity allocation exceeds your risk profile",
+    "Momentum strong in mid-cap funds — consider topping up",
+    "Good time to top up ELSS for 80C tax saving"
+  ]
+}

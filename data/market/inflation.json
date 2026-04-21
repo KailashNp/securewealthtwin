@@ -1,0 +1,19 @@
+{
+  "scenario": "high_inflation",
+  "nifty_ytd": -0.03,
+  "nifty_level": 22100,
+  "gold_ytd": 0.14,
+  "gold_price_per_gram": 7200,
+  "fd_rate": 0.082,
+  "inflation_rate": 0.071,
+  "top_mf_returns": {
+    "large_cap_avg": 0.06,
+    "mid_cap_avg": -0.02,
+    "debt_fund_avg": 0.075
+  },
+  "ai_signals": [
+    "Inflation above 7% — FDs more attractive than equity currently",
+    "Gold up 14% YTD — consider partial profit booking",
+    "SIPs auto-averaging in correction — stay the course"
+  ]
+}

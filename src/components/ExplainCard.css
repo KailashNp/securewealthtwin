@@ -1,0 +1,95 @@
+.explain-container {
+  margin-top: 12px;
+  width: 100%;
+}
+
+.why-btn {
+  background: none;
+  border: none;
+  color: var(--secondary-teal, #14b8a6);
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.explain-panel {
+  margin-top: 15px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.explanation-text {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.info-icon {
+  color: var(--secondary-teal);
+  flex-shrink: 0;
+}
+
+.driver-header {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.driver-row {
+  margin-bottom: 12px;
+}
+
+.driver-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.driver-label {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.driver-weight {
+  color: #64748b;
+}
+
+.driver-bar-bg {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.driver-bar-fill {
+  height: 100%;
+  background: var(--primary-teal, #005f52);
+  border-radius: 3px;
+}
+
+.explain-loader {
+  font-size: 12px;
+  color: #94a3b8;
+  font-style: italic;
+  text-align: center;
+  padding: 10px;
+}

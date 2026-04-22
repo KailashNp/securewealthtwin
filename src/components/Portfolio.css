@@ -1,0 +1,225 @@
+:root {
+  --teal: #006D5B;
+  --bg: #f3f7f6;
+  --white: #ffffff;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --border: #e2e8f0;
+  --orange: #f59e0b;
+}
+
+/* Header Styles */
+.page-header-alt {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.subtext {
+  color: var(--text-light);
+  max-width: 500px;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--teal);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.btn-orange {
+  background: #f59e0b;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+/* Dashboard Grid */
+.dashboard-grid-alt {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.huge-amount {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin: 8px 0;
+}
+
+.badge-growth {
+  background: #e6f9f5;
+  color: var(--teal);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+  height: fit-content;
+}
+
+/* FIXED BAR CHART CSS */
+.chart-wrapper {
+  margin-top: 40px;
+}
+
+.bar-chart-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* Matching the 7 months in image */
+  gap: 15px;
+  height: 120px;
+  align-items: flex-end;
+}
+
+.bar-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  min-width: 0; /* Prevents text from pushing width */
+}
+
+.bar-fill {
+  background: #006D5B;
+  border-radius: 4px;
+  transition: height 0.3s ease;
+  
+}
+
+.bar-fill.active {
+  opacity: 1 !important;
+  background: #006D5B !important;
+}
+
+.bar-label {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 800;
+  color: #94a3b8;
+  margin-top: 12px;
+}
+
+/* Rebalance Card */
+.rebalance-card {
+  background: #fffcf0;
+  border: 1px solid #fee2e2;
+}
+
+.rebalance-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.warn-title {
+  font-weight: 800;
+  font-size: 11px;
+  color: #92400e;
+  letter-spacing: 0.5px;
+}
+
+.warn-text {
+  font-size: 13px;
+  color: #92400e;
+  line-height: 1.5;
+}
+
+.allocation-bar-container {
+  height: 8px;
+  background: #fee2e2;
+  border-radius: 4px;
+  position: relative;
+  margin: 15px 0;
+}
+
+.bar-current {
+  height: 100%;
+  background: #f59e0b;
+  border-radius: 4px;
+}
+
+.bar-target-marker {
+  position: absolute;
+  top: -4px;
+  height: 16px;
+  width: 2px;
+  background: #92400e;
+}
+
+/* Table Styles */
+.table-card { padding: 0; overflow: hidden; }
+.card-header-flex { padding: 24px; display: flex; justify-content: space-between; align-items: center; }
+
+.table-header-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
+  padding: 12px 24px;
+  background: #f8fafc;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-light);
+  border-top: 1px solid var(--border);
+}
+
+.table-data-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 1fr 1fr;
+  padding: 16px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  align-items: center;
+}
+
+.fund-cell { display: flex; gap: 12px; align-items: center; }
+.fund-icon {
+  width: 36px; height: 36px; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 12px; background: #e0f2fe; color: #0369a1;
+}
+
+.status-badge {
+  font-size: 10px; font-weight: 800; padding: 4px 8px; border-radius: 4px;
+}
+.status-badge.blue { background: #e0f2fe; color: #0369a1; }
+.status-badge.orange { background: #ffedd5; color: #9a3412; }
+.status-badge.gray { background: #f1f5f9; color: #475569; }
+
+/* Institutional Banner */
+.institutional-banner {
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
+              url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000');
+  background-size: cover;
+  border-radius: 16px;
+  padding: 60px 40px;
+  margin-top: 40px;
+}
+
+.banner-content h2 { font-size: 28px; margin-bottom: 15px; color: var(--text-dark); }
+.banner-content p { max-width: 500px; color: var(--text-light); margin-bottom: 20px; }
+.text-link { color: var(--teal); font-weight: 700; text-decoration: none; }

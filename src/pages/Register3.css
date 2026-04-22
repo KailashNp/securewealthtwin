@@ -1,0 +1,207 @@
+:root {
+  --teal: #006D5B;
+  --teal-light: #e6f1f0;
+  --bg-light: #f8fafc;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --border: #e2e8f0;
+  --white: #ffffff;
+}
+
+.onboarding-container {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background: white;
+}
+
+.registration-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+.bg-wash { background: var(--bg-light); max-width: 100%; width: 100%; }
+
+.section-header { margin-bottom: 48px; }
+.section-title { font-size: 38px; font-weight: 800; margin-bottom: 16px; }
+.teal-text { color: var(--teal); }
+.section-desc { color: var(--text-light); max-width: 700px; line-height: 1.6; }
+
+/* Assets Grid */
+.asset-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.asset-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.asset-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.asset-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bank { background: #e0f2fe; color: #0369a1; }
+.gold { background: #fef3c7; color: #b45309; }
+.invest { background: #dcfce7; color: #15803d; }
+.vehicle { background: #ccfbf1; color: #0f766e; }
+.property { background: #f1f5f9; color: #334155; }
+
+.header-text h3 { font-size: 16px; font-weight: 700; margin: 0; }
+.header-text span { font-size: 13px; color: var(--text-light); }
+
+.add-link {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+/* Forms inside cards */
+.asset-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.input-box { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
+.input-box.full { grid-column: span 2; }
+.input-box label { font-size: 10px; font-weight: 800; color: #94a3b8; letter-spacing: 0.5px; }
+
+.input-box input, .input-box select {
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 8px 0;
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+}
+
+.currency-input, .percent-input {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.currency-input span, .percent-input span { font-weight: 600; color: #94a3b8; margin-right: 8px; }
+
+.empty-dashed-box {
+  height: 100px;
+  border: 2px dashed #e2e8f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.filled-asset-item {
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn { background: none; border: none; color: #ef4444; cursor: pointer; }
+
+/* Safety Banner */
+.safety-banner-card {
+  background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000');
+  background-size: cover;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-overlay {
+  background: rgba(0,0,0,0.5);
+  height: 100%;
+  padding: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Liabilities Layout */
+.liability-container { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+.liability-form-card { background: white; padding: 32px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+
+.add-dashed-card {
+  margin-top: 24px;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.plus-circle {
+  width: 40px; height: 40px; background: #f1f5f9; border-radius: 50%;
+  margin: 0 auto 12px; display: flex; align-items: center; justify-content: center;
+}
+
+/* Liability Sidebar */
+.info-callout { background: #eff6ff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+.info-header { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #1e40af; margin-bottom: 12px; }
+.info-callout p { font-size: 13px; color: #1e40af; opacity: 0.8; line-height: 1.5; }
+.encrypted-tag { margin-top: 15px; font-size: 10px; font-weight: 800; color: #1e40af; display: flex; align-items: center; gap: 4px; }
+
+.analysis-card { background: white; border-radius: 12px; padding: 24px; border: 1px solid var(--border); }
+.label-sm { font-size: 10px; font-weight: 800; color: #94a3b8; }
+.dti-row { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; }
+.status-pill-green { background: #10b981; color: white; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 4px; }
+.progress-bar-bg { height: 6px; background: #f1f5f9; border-radius: 3px; margin: 20px 0; }
+.progress-fill { height: 100%; background: #10b981; border-radius: 3px; }
+.analysis-stats { display: flex; gap: 20px; border-top: 1px solid #f1f5f9; padding-top: 20px; }
+.stat-box span { font-size: 10px; color: var(--text-light); display: block; }
+.stat-box strong { font-size: 18px; }
+
+/* Goals Section */
+.goals-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.goal-card { border: 1px solid var(--border); border-radius: 12px; padding: 32px; transition: all 0.2s; }
+.goal-card:hover { border-color: var(--teal); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.goal-icon-box { width: 44px; height: 44px; background: #f0fdfa; color: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.goal-card p { font-size: 13px; color: var(--text-light); line-height: 1.5; margin-bottom: 24px; }
+
+.goals-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; }
+.custom-goal-btn { display: flex; align-items: center; gap: 16px; cursor: pointer; }
+.plus-btn-sm { width: 32px; height: 32px; background: #f1f5f9; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.custom-goal-btn span { font-size: 12px; color: var(--text-light); }
+
+.btn-primary-teal { background: var(--teal); color: white; border: none; padding: 14px 28px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+.btn-text { background: none; border: none; font-weight: 700; color: var(--text-light); cursor: pointer; margin-right: 20px; }
+
+.calculator-footer-card { margin-top: 60px; background: #f8fafc; border-radius: 12px; display: flex; overflow: hidden; }
+.calc-info { flex: 1; padding: 40px; }
+.calc-visual { flex: 1; background: url('https://images.unsplash.com/photo-1611974714658-058e1c7440ba?auto=format&fit=crop&q=80&w=1000'); background-size: cover; position: relative; }
+.visual-content { background: rgba(255,255,255,0.9); position: absolute; inset: 20px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.visual-content h2 { font-size: 32px; color: var(--teal); margin: 0; }
+.visual-content span { font-size: 10px; font-weight: 800; color: var(--text-light); }
+
+/* Global Footer Nav */
+.page-nav-footer { border-top: 1px solid var(--border); padding: 30px 40px; display: flex; justify-content: space-between; align-items: center; margin-top: 40px; }
+.btn-back { background: none; border: none; color: var(--text-dark); font-weight: 700; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.btn-review { background: var(--teal); color: white; border: none; padding: 18px 36px; border-radius: 10px; font-weight: 700; display: flex; align-items: center; gap: 12px; cursor: pointer; }

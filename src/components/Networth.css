@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --teal: #006D5B;
+  --primary-teal: #006D5B;
+  --secondary-teal: #14b8a6;
+  --bg: #f3f7f6;
+  --white: #ffffff;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg);
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: 240px;
+  background: var(--white);
+  padding: 24px 0;
+  border-right: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+  padding: 0 24px 30px;
+  color: var(--text-dark);
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-item:hover {
+  background: #f8fafc;
+  color: var(--teal);
+}
+
+.nav-item.active {
+  color: var(--teal);
+  background: #f0fdfa;
+  border-right: 3px solid var(--teal);
+}
+
+/* ── Main Area ── */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+/* ── Page Header ── */
+.page-header {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: stretch;
+}
+
+.title-block h1 {
+  font-size: 38px;
+  line-height: 1.1;
+  margin: 10px 0;
+  color: var(--text-dark);
+}
+
+.title-block p {
+  color: var(--text-light);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
+.eyebrow {
+  color: var(--teal);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ── Cards ── */
+.stat-summary-card,
+.trajectory-card,
+.content-card,
+.kpi-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.big-amount {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--teal);
+  margin: 10px 0;
+}
+
+/* ── Trajectory Card ── */
+.trajectory-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.traj-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.mini-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 100px;
+  flex: 1;
+}
+
+.bar-container {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bar-date {
+  font-size: 9px;
+  color: var(--text-light);
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* ── Bar Chart (Growth Trajectory) ── */
+.bar-chart-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 240px;
+  padding-top: 20px;
+  gap: 12px;
+}
+
+.bar-column {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 0;
+}
+
+.bar-fill {
+  width: 100%;
+  background: var(--teal);
+  opacity: 0.15;
+  border-radius: 4px 4px 0 0;
+  transition: all 0.3s ease;
+}
+
+.bar-fill.active {
+  opacity: 1 !important;
+  background: #006D5B !important;
+}
+
+.bar-label {
+  height: 14px;
+  line-height: 14px;
+  margin-top: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+  width: 0;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* ── Dashboard Grid ── */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* ── Card internals ── */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrap.green { background: #ecfdf5; color: var(--teal); }
+.icon-wrap.red   { background: #fef2f2; color: #ef4444; }
+
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.badge.green { background: #dcfce7; color: var(--teal); }
+.badge.red   { background: #fee2e2; color: #ef4444; }
+
+/* ── Row Items ── */
+.row-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.row-title  { font-weight: 700; font-size: 14px; }
+.row-sub    { font-size: 12px; color: var(--text-light); }
+.row-right  { text-align: right; }
+.row-val    { font-weight: 800; font-size: 14px; }
+.row-change { font-size: 11px; color: #10b981; font-weight: 700; }
+.row-change.red  { color: #ef4444; }
+.row-change.warn { color: #f59e0b; }
+
+.asset-rows { margin-top: 8px; }
+
+/* ── Buttons ── */
+.add-btn-dashed {
+  width: 100%;
+  margin-top: 20px;
+  background: none;
+  border: 1px dashed #cbd5e1;
+  padding: 12px;
+  border-radius: 10px;
+  color: var(--text-light);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-btn-dashed:hover {
+  background: #f0fdfa;
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.add-btn-placeholder {
+  width: 100%;
+  margin-top: 24px;
+  background: none;
+  border: 1px dashed #d1d5db;
+  padding: 12px;
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-btn-placeholder:hover {
+  background: #f9fbfb;
+  border-color: var(--secondary-teal);
+  color: var(--primary-teal);
+}
+
+/* ── Toggle Group ── */
+.toggle-group {
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 8px;
+  display: flex;
+}
+
+.toggle-group button {
+  border: none;
+  background: none;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.toggle-group button.active {
+  background: var(--teal);
+  color: white;
+}
+
+/* ── KPI Footer ── */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.kpi-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.kpi-icon.blue   { background: #eff6ff; color: #3b82f6; }
+.kpi-icon.green  { background: #f0fdf4; color: #22c55e; }
+.kpi-icon.orange { background: #fff7ed; color: #f97316; }
+
+.kpi-label { font-size: 13px; font-weight: 600; color: var(--text-light); }
+.kpi-val   { font-size: 22px; font-weight: 800; margin: 5px 0; color: var(--text-dark); }
+.kpi-sub   { font-size: 11px; color: var(--text-light); }
+
+/* ── Hero section ── */
+.hero-section {
+  align-items: flex-start;
+}
+
+.hero-text h1 {
+  margin-bottom: 8px;
+}
+
+/* ── Trend indicator ── */
+.trend-up {
+  color: #10b981;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.networth-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: white;
+  border-radius: 16px;
+  padding: 24px 28px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+/* LEFT SIDE */
+.networth-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.networth-icon {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-teal);
+}
+
+/* TEXT */
+.networth-label {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.networth-value {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--primary-teal);
+  margin: 0;
+}
+
+/* RIGHT SIDE */
+.networth-right {
+  text-align: right;
+}
+
+.networth-growth {
+  font-size: 16px;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.networth-sub {
+  display: block;
+  font-size: 12px;
+  color: var(--text-light);
+}

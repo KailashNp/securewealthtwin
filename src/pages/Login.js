@@ -1,0 +1,137 @@
+import React, { useState, useEffect } from 'react';
+import './Login.css';
+import { AtSign, Lock, RefreshCw } from 'lucide-react';
+
+const CAPTCHA_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+
+function generateCaptcha(length = 5) {
+  const code = Array.from({ length }, () =>
+    CAPTCHA_CHARS[Math.floor(Math.random() * CAPTCHA_CHARS.length)]
+  ).join('');
+  const rotations = Array.from({ length }, () =>
+    parseFloat((Math.random() * 20 - 10).toFixed(1))
+  );
+  return { code, rotations };
+}
+
+const Login = ({onLogin, onRegister}) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [captchaInput, setCaptchaInput] = useState('');
+  const [captcha, setCaptcha] = useState(generateCaptcha());
+  const [spinning, setSpinning] = useState(false);
+
+  const refreshCaptcha = () => {
+    setCaptcha(generateCaptcha());
+    setCaptchaInput('');
+    setSpinning(true);
+    setTimeout(() => setSpinning(false), 400);
+  };
+
+  const handleSubmit = (e) => {
+  e.preventDefault();
+  
+  // simple check
+  if (username === "priya" && password === "123") {
+    onLogin(username);   
+  } else {
+    alert("Invalid username or password ❌");
+  }
+};
+
+  return (
+    <div className="login-page">
+      <div className="login-card">
+        <div className="login-header">
+          <span className="login-eyebrow">SECURE ACCESS</span>
+          <h1 className="login-title">SecureWealth Twin</h1>
+          
+        </div>
+
+        <form className="login-form" onSubmit={handleSubmit}>
+          
+          <div className="field-group">
+            <label className="field-label">USERNAME</label>
+            <div className="field-wrapper">
+              <input
+                type="text"
+                className="field-input"
+                placeholder="priya"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
+              
+            </div>
+          </div>
+
+          {/* Passphrase Field */}
+          <div className="field-group">
+            <div className="field-label-row">
+              <label className="field-label">PASSPHRASE</label>
+              <a href="#" className="forgot-link">Forgot?</a>
+            </div>
+            <div className="field-wrapper">
+              <input
+                type="password"
+                className="field-input"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <span className="field-icon"><Lock size={16} /></span>
+            </div>
+          </div>
+
+          {/* CAPTCHA / Security Verification */}
+          <div className="captcha-block">
+            <div className="captcha-header">
+              <span className="captcha-label">SECURITY VERIFICATION</span>
+              <button type="button" className={`captcha-refresh ${spinning ? 'spinning' : ''}`} onClick={refreshCaptcha}>
+                <RefreshCw size={14} />
+              </button>
+            </div>
+            <div className="captcha-body">
+              <div className="captcha-display">
+                {captcha.code.split('').map((char, i) => (
+                  <span
+                    key={i}
+                    className="captcha-char"
+                    style={{ '--rotate': `${captcha.rotations[i]}deg` }}
+                  >
+                    {char}
+                  </span>
+                ))}
+              </div>
+              <input
+                type="text"
+                className="captcha-input"
+                placeholder="Type letters"
+                value={captchaInput}
+                onChange={(e) => setCaptchaInput(e.target.value.toUpperCase())}
+                maxLength={5}
+              />
+            </div>
+          </div>
+
+          {/* Submit */}
+          <button type="submit" className="submit-btn">
+            Login <span className="btn-arrow">→</span>
+          </button>
+        </form>
+
+        <div className="login-footer">
+          <p>New to the platform? <span 
+  className="register-link"
+  onClick={onRegister}
+>
+  Register Now
+</span></p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Login;

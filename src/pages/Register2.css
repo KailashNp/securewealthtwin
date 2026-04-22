@@ -1,0 +1,130 @@
+:root {
+  --teal: #006D5B;
+  --bg-auth: #f3f7f6;
+  --white: #ffffff;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --input-bg: #f3f7f6;
+  --border: #e2e8f0;
+}
+
+.identity-card {
+  width: 100%;
+  max-width: 650px;
+  background: transparent; /* Card background is handled by parent register-page */
+  padding: 20px;
+}
+
+.identity-form {
+  margin-top: 40px;
+}
+
+/* Grid Layout for the middle row */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+/* Label styling matching the image */
+.input-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* Input styling matching the image */
+.styled-input {
+  width: 100%;
+  padding: 16px 20px;
+  background-color: var(--input-bg);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  color: var(--text-dark);
+  outline: none;
+}
+
+.styled-input::placeholder {
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+/* Specific styling for Date and Mobile */
+.date-input {
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.mobile-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: var(--input-bg);
+  border-radius: 4px;
+}
+
+.country-code {
+  padding-left: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.mobile-input {
+  background-color: transparent;
+}
+
+/* Footer Actions Styling */
+.form-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+
+
+.btn-continue-teal {
+  background-color: var(--teal);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 109, 91, 0.2);
+  transition: transform 0.2s;
+  justify-content: center;
+}
+
+.btn-continue-teal:hover {
+  transform: translateY(-2px);
+  background-color: #005a4b;
+}
+
+/* Logic for Progress Steps (to highlight step 2) */
+.step.completed .step-icon-box {
+  background: #dcfce7;
+  color: var(--teal);
+}
+
+.step-divider.active {
+  background: var(--teal);
+}
+
+/* Dark mode compatibility (optional) */
+.dark .styled-input {
+  background-color: #1e293b;
+  color: white;
+}

@@ -1,0 +1,52 @@
+{
+  "user_id": "fraud_demo",
+  "name": "Demo Fraud User",
+  "age": 34,
+  "monthly_income": 90000,
+  "risk_profile": "moderate",
+  "trusted_devices": ["device_old_laptop"],
+  "typical_avg_transaction": 45000,
+  "behavioral_flags": {
+    "is_trusted_device": false,
+    "device_id": "device_new_android_unknown",
+    "action_amount": 250000,
+    "usual_avg_amount": 45000,
+    "otp_attempts": 3,
+    "action_time": "02:14:00",
+    "last_login_time": "02:08:00",
+    "action_type": "NEFT_TRANSFER",
+    "cancel_retry_count": 4
+  },
+  "fraud_score_breakdown": {
+    "new_device": 20,
+    "action_speed_under_10s": 15,
+    "amount_anomaly_5x_avg": 25,
+    "otp_retries_3_times": 20,
+    "night_time_large_action": 10,
+    "retry_loop": 10,
+    "total_score": 100,
+    "expected_decision": "BLOCK"
+  },
+  "transactions": [
+    { "date": "2025-01-05", "category": "rent", "amount": 20000 },
+    { "date": "2025-01-10", "category": "groceries", "amount": 5000 },
+    { "date": "2025-01-15", "category": "shopping", "amount": 8000 },
+    { "date": "2025-02-05", "category": "rent", "amount": 20000 },
+    { "date": "2025-02-10", "category": "groceries", "amount": 4800 },
+    { "date": "2025-03-05", "category": "rent", "amount": 20000 },
+    { "date": "2025-03-12", "category": "groceries", "amount": 5200 },
+    { "date": "2025-03-20", "category": "shopping", "amount": 7500 }
+  ],
+  "portfolio": {
+    "holdings": [],
+    "total_invested": 0,
+    "total_current_value": 0,
+    "sips": []
+  },
+  "assets": [],
+  "accounts": [
+    { "bank": "SBI", "account_type": "Savings", "balance": 180000 }
+  ],
+  "liabilities": 0,
+  "goals": []
+}

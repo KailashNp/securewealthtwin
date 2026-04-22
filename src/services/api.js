@@ -9,4 +9,4 @@ export const executeAction = (payload) =>
   axios.post(`${API}/api/action/execute`, payload);
 
 export const getExplanation = (payload) =>
-  axios.get(`${API}/api/recommend/explain`, payload );
+  axios.post(`${API}/api/recommend/explain`, payload );

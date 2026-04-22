@@ -1,34 +1,41 @@
-
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
+# Environment variables
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# Node modules
+node_modules/
+
+# Python
+venv/
+.venv/
+__pycache__/
+
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.env
-__pycache__/
-node_modules/
-*.pyc
-.DS_Store
-*.egg-info/
+# Build / cache
 dist/
-.venv/
->>>>>>> f833541da63bf48efc1c05af23328e8cf5574ae9
+build/
+.cache/
+
+# Coverage
+coverage/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Docker
+*.env
+docker-compose.override.yml
